@@ -1,9 +1,8 @@
 <template>
     <div class="quote-form-wrapper">
         <div class="quote-form-border"></div>
-        <div class="quote-form-background"></div>
-        <input type="text" placeholder="name" v-model="author" class="author-input">
         <textarea name="quote" id="" cols="30" rows="10" placeholder="quote" v-model="quote" class="quote-input"></textarea>
+        <input type="text" placeholder="name" v-model="author" class="author-input">
         <button class="submit-quote" v-on:click="addQuote">Add quote</button>
 
         <div :class="{error: error}" class="quote-form-error-msg">
