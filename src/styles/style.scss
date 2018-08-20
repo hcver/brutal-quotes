@@ -80,18 +80,7 @@ body,html{
   width: 100%;
   height: 100%;
   z-index: -1;
-}
-
-.quote-form-background {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background: #7700C0;
-  background: #00C01F;
-  //opacity: 0.4;
-  z-index:-2;
-  top: 1.5rem;
-  left: 1.5rem;
+  opacity: 0.4;
 }
 
 .author-input, .quote-input {

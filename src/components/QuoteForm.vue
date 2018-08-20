@@ -7,10 +7,11 @@
         <button class="submit-quote" v-on:click="addQuote">Add quote</button>
 
         <div :class="{error: error}" class="quote-form-error-msg">
-            Only losers try to submit an empty form :-)
+            Only losers try to submit an empty form :-) Haha LOSER!!! :D
         </div>
         <div :class="{succes: succes}" class="quote-form-succes-msg">
-            Your quote is succesfully uploaded! Brutal!!!!
+            Your quote is succesfully added! Brutal!!!!
+            To see your brutalistic miracle, <a href="#" v-onclick="scrollToBottom">Click here</a>
         </div>
     </div>
 </template>
@@ -39,6 +40,9 @@
                         this.$store.commit('eventFormSucces', false);
                     }, 5000);
                 }
+            },
+            scrollToBottom(){
+                window.scrollTo(0,document.body.scrollHeight);
             }
         },
         computed: {
