@@ -4,7 +4,7 @@
                 <p class="quote">{{quote.Quote}}</p>
                 <p class="author">{{quote.Author}}</p>
         </div>
-
+        <div id="quote-list-bottom"></div>
     </div>
 </template>
 <script>

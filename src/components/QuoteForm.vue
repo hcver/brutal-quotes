@@ -11,7 +11,7 @@
         </div>
         <div :class="{succes: succes}" class="quote-form-succes-msg">
             Your quote is succesfully added! Brutal!!!!
-            To see your brutalistic miracle, <a href="#" v-onclick="scrollToBottom">Click here</a>
+            To see your brutalistic miracle, <a href="#quote-list-bottom">Click here</a>
         </div>
     </div>
 </template>
@@ -40,9 +40,6 @@
                         this.$store.commit('eventFormSucces', false);
                     }, 5000);
                 }
-            },
-            scrollToBottom(){
-                window.scrollTo(0,document.body.scrollHeight);
             }
         },
         computed: {
