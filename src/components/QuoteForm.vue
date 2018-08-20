@@ -24,12 +24,28 @@
             }
         },
         methods: {
+            /**
+             * If user commits quote form --
+             * first check if input name and quote is filled in
+             *
+             * No?
+             * Commit mutation for state 'eventFormError' from false to true
+             * Display error message
+             * set timeout function to change state 'eventFormError' to false again after 3s
+             *
+             * Yes?
+             * Dispatch addQuote action from store which pushes the payload (quote, author)
+             * to firebase and will return the new firebase snapshot
+             * Commit mutation for state 'eventFormSucces' from false to true
+             * Display succes message
+             * set timeout function to change state 'eventFormSucces' to false again after 6s
+             */
             addQuote() {
                 if(this.quote == '' || this.author == '' ){
                     this.$store.commit('eventFormError', true);
                     setTimeout(() => {
                         this.$store.commit('eventFormError', false);
-                    }, 2000);
+                    }, 3000);
                 }else{
                     this.$store.dispatch('addQuote', {
                         Quote: this.quote,
@@ -38,7 +54,7 @@
                     this.$store.commit('eventFormSucces', true);
                     setTimeout(() => {
                         this.$store.commit('eventFormSucces', false);
-                    }, 5000);
+                    }, 6000);
                 }
             }
         },

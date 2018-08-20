@@ -1,12 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
-@font-face {
-  font-family: Georgia;
-  font-weight: 400;
-  src: url(../assets/fonts/georgia-regular.ttf);
-}
-
 body,html{
   background-color: black;
   margin: 0;
@@ -30,23 +24,23 @@ body,html{
 }
 .quote-wrapper .quote {
   color: white;
-  font-family: georgia;
+  font-family: 'Abril Fatface', cursive;
   font-weight: 400;
-  font-size: 11rem;
+  font-size: 10rem;
   max-width: 70vw;
   margin-bottom: 0;
   position: relative;
   margin-bottom: 0.5rem;
   line-height: 1.1;
   letter-spacing: 0;
-  &::before {
-    content: "\201C";
-    font-size: 60rem;
-    position:absolute;
-    top: -12rem;
-    left: 5rem;
-    opacity: 0.4
-  }
+  //&::before {
+  //  content: "\201C";
+  //  font-size: 60rem;
+  //  position:absolute;
+  //  top: -12rem;
+  //  left: 5rem;
+  //  opacity: 0.4
+  //}
   //&::after{
   //  content: "\201D";
   //  font-size:30rem;
@@ -60,9 +54,10 @@ body,html{
 .quote-wrapper .author {
   color: white;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   margin: 0;
   font-style: italic;
+  opacity: 0.3;
 }
 
 /**
