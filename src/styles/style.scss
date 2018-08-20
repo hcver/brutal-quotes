@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+body,html{
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/**
+  QUOTE LIST STYLING
+ */
+.quote-list-wrapper{
+  padding-left: 4rem;
+}
+
+.quote-wrapper {
+  position: relative;
+  margin-bottom: 15rem;
+}
+.quote-wrapper .quote {
+  color: white;
+  font-family: 'Abril Fatface', cursive;
+  font-weight: 400;
+  font-size: 11rem;
+  max-width: 70vw;
+  margin-bottom: 0;
+  position: relative;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+  letter-spacing: 0;
+  &::before {
+    content: "\201C";
+    font-size: 60rem;
+    position:absolute;
+    top: -12rem;
+    left: 5rem;
+    opacity: 0.4
+  }
+  //&::after{
+  //  content: "\201D";
+  //  font-size:30rem;
+  //  position:absolute;
+  //  bottom: -5rem;
+  //  opacity: 0.5;
+  //  line-height: 0
+  //}
+}
+
+.quote-wrapper .author {
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  margin: 0;
+  font-style: italic;
+}
+
+/**
+  QUOTE FORM STYLING
+ */
+
+.quote-form-wrapper {
+  position: fixed;
+  right: 5rem;
+  top: 2rem;
+  padding: 1rem;
+  max-width: 200px;
+  background: transparent;
+}
+
+.quote-form-border {
+  border: 10px solid white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.quote-form-background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #7700C0;
+  background: #00C01F;
+  //opacity: 0.4;
+  z-index:-2;
+  top: 1.5rem;
+  left: 1.5rem;
+}
+
+.author-input, .quote-input {
+  display: block;
+  width: 100%;
+  position: relative;
+  background: transparent;
+  border: 0;
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  &::placeholder {
+    color: white
+  }
+}
+
+.submit-quote {
+  background: transparent;
+  border: 0;
+  color: white;
+  float: right;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.quote-form-error-msg, .quote-form-succes-msg {
+  display: none;
+  position: absolute;
+  bottom: -6rem;
+  color: white;
+  left: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.quote-form-error-msg.error, .quote-form-succes-msg.succes {
+  display: block;
+}
