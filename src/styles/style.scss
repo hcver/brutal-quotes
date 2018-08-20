@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
+@font-face {
+  font-family: Georgia;
+  font-weight: 400;
+  src: url(../assets/fonts/georgia-regular.ttf);
+}
+
 body,html{
   background-color: black;
   margin: 0;
@@ -24,7 +30,7 @@ body,html{
 }
 .quote-wrapper .quote {
   color: white;
-  font-family: 'Abril Fatface', cursive;
+  font-family: georgia;
   font-weight: 400;
   font-size: 11rem;
   max-width: 70vw;
