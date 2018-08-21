@@ -1,10 +1,10 @@
 <template>
     <div class="quote-list-wrapper">
-        <div v-for="quote in quotes" class="quote-wrapper">
+        <div v-for="(quote, index) in quotes"  v-if="index === $store.state.activeQuote" class="quote-wrapper">
                 <p class="quote">{{quote.Quote}}</p>
                 <p class="author">{{quote.Author}}</p>
         </div>
-        <div id="quote-list-bottom"></div>
+        <button class="new-quote" @click="getRandomNumber($store.state._quotes.length - 1)">Show new brutal quote</button>
     </div>
 </template>
 <script>
@@ -12,7 +12,14 @@
         data() {
             return {
                 quotes: this.$store.state._quotes,
+                activeQuote: 0
             }
+        },
+        methods: {
+          getRandomNumber(max){
+              this.$store.commit('getRandomNumber', Math.floor(Math.random() * Math.floor(max)))
+              // this.activeQuote = Math.floor(Math.random() * Math.floor(max));
+          }
         },
         computed: {
             getQuotes() {
@@ -23,6 +30,9 @@
             getQuotes() {
                 return this.$store.state._quotes
             }
+        },
+        created(){
+            this.$store.commit('getRandomNumber', Math.floor(Math.random() * 18))
         }
     }
 </script>

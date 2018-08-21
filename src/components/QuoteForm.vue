@@ -10,7 +10,7 @@
         </div>
         <div :class="{succes: succes}" class="quote-form-succes-msg">
             Your quote is succesfully added! Brutal!!!!
-            To see your brutalistic miracle, <a href="#quote-list-bottom">Click here</a>
+            Press not here, but <a @click="showLatestQuote" class="show-latest-quote">here</a> to view your quote...
         </div>
     </div>
 </template>
@@ -55,6 +55,9 @@
                         this.$store.commit('eventFormSucces', false);
                     }, 6000);
                 }
+            },
+            showLatestQuote(){
+                this.$store.commit('showLatestQuote', (this.$store.state._quotes.length - 1));
             }
         },
         computed: {

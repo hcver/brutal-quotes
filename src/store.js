@@ -10,7 +10,8 @@ export default new Vuex.Store({
         _quotes: [],
         quoteSend: false,
         eventFormError: false,
-        eventFormSucces: false
+        eventFormSucces: false,
+        activeQuote: 0
     },
     getters: {
         isQuote(state) {
@@ -24,11 +25,17 @@ export default new Vuex.Store({
         isQuoteSend(state, payload){
             state.quoteSend = payload;
         },
-        eventFormError (state, payload) {
+        eventFormError(state, payload) {
             state.eventFormError = payload;
         },
-        eventFormSucces (state, payload) {
+        eventFormSucces(state, payload) {
             state.eventFormSucces = payload;
+        },
+        getRandomNumber(state, payload) {
+            state.activeQuote = payload;
+        },
+        showLatestQuote(state, payload) {
+            state.activeQuote = payload;
         }
     },
     actions: {
@@ -42,9 +49,13 @@ export default new Vuex.Store({
             });
         },
       getFirebaseDatabase(context){
-            firebase.database.ref('Quotes').on('value', function(snapshot){
-               context.commit('addQuote', snapshot.val());
-            });
+          firebase.database.ref('Quotes').on('value', function(snapshot){
+              let array = [];
+              snapshot.forEach(function (childSnapshot) {
+                  array.push(childSnapshot.val());
+              });
+              context.commit('addQuote', array);
+          });
         }
     }
 })

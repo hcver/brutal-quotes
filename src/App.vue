@@ -18,7 +18,7 @@
             QuoteForm,
             QuoteList
         },
-        created: function() {
+        created() {
             this.$store.dispatch('getFirebaseDatabase');
         }
     }
