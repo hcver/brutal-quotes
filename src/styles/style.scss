@@ -50,7 +50,7 @@ button.new-quote {
   padding: 1rem 2rem;
   text-transform: uppercase;
   background: black;
-  color: white;
+  color: black;
   cursor: pointer;
   font-weight: bold;
   background: red;
@@ -59,7 +59,6 @@ button.new-quote {
   background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
   background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   text-decoration: underline;
   border: 5px dashed #ffff00;
 }
@@ -124,7 +123,7 @@ button.new-quote {
 
 .show-latest-quote{
   background: black;
-  color: white;
+  color: black;
   cursor: pointer;
   font-weight: bold;
   background: red;
@@ -133,7 +132,6 @@ button.new-quote {
   background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
   background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   text-decoration: underline;
   text-transform: uppercase;
   font-size: 22px;
