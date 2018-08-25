@@ -2,10 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import VueFire from 'vuefire'
 import './styles/style.scss'
-
-Vue.use(VueFire)
+import './styles/font-awesome.scss'
 
 new Vue({
     router,

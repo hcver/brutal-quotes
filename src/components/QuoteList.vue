@@ -4,7 +4,7 @@
                 <p class="quote">{{quote.Quote}}</p>
                 <p class="author">{{quote.Author}}</p>
         </div>
-        <button class="new-quote" @click="getRandomNumber($store.state._quotes.length - 1)">Show new brutal quote</button>
+        <button class="new-quote" @click="getRandomNumber($store.state._quotes.length - 1)"><i class="fas fa-sync"></i>Show new brutal quote</button>
     </div>
 </template>
 <script>
@@ -18,7 +18,6 @@
         methods: {
           getRandomNumber(max){
               this.$store.commit('getRandomNumber', Math.floor(Math.random() * Math.floor(max)))
-              // this.activeQuote = Math.floor(Math.random() * Math.floor(max));
           }
         },
         computed: {
