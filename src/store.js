@@ -16,6 +16,9 @@ export default new Vuex.Store({
     getters: {
         isQuote(state) {
             return state._quotes;
+        },
+        likesActiveQuote(state) {
+            return state._quotes[state.activeQuote].Likes
         }
     },
     mutations: {
@@ -46,6 +49,18 @@ export default new Vuex.Store({
                 }else{
                     context.commit('isQuoteSend', true);
                 }
+            });
+        },
+        likeQuote(context, payload) {
+            var firebaseRef = firebase.database.ref('Quotes');
+           firebaseRef.database.ref('Quotes').once('value').then(function(snapshot) {
+                snapshot.forEach(function (childSnapshot) {
+                    var singleQuote = childSnapshot.val();
+                    var id = singleQuote.ID;
+                    if(id === context.state._quotes[context.state.activeQuote].ID){
+                        firebaseRef.child(childSnapshot.key).update(payload);
+                    }
+                });
             });
         },
       getFirebaseDatabase(context){

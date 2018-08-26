@@ -190,3 +190,53 @@ button.new-quote .fas {
     margin-right: 2rem;
   }
 }
+
+
+/**
+  Quote liker styling
+ */
+.quote-liker-wrapper {
+  color: white;
+  max-width: 200px;
+  position: fixed;
+  left: 5rem;
+  bottom: 2rem;
+  padding: 1rem;
+  background: transparent;
+  border: 10px solid rgba(255, 255, 255, 0.4);
+}
+
+.quote-liker-wrapper .like-button {
+  pointer-events: none;
+  .far {
+    display: none;
+  }
+}
+
+.quote-liker-wrapper .like-button.active {
+  pointer-events: auto;
+  .far {
+    display: inline-block;
+  }
+}
+
+.quote-liker-wrapper > p {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .quote-liker-wrapper {
+    position: relative;
+    margin: 2rem 4rem;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .quote-liker-wrapper {
+    margin-left: 2rem;
+    max-width: 100%;
+    margin-right: 2rem;
+  }
+}

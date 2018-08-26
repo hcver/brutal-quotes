@@ -47,7 +47,9 @@
                 }else{
                     this.$store.dispatch('addQuote', {
                         Quote: this.quote,
-                        Author: this.author
+                        ID: this.$store.state._quotes.length,
+                        Author: this.author,
+                        Likes: 0
                     });
                     this.$store.commit('eventFormSucces', true);
                     setTimeout(() => {

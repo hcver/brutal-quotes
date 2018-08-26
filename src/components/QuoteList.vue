@@ -4,7 +4,7 @@
                 <p class="quote">{{quote.Quote}}</p>
                 <p class="author">{{quote.Author}}</p>
         </div>
-        <button class="new-quote" @click="getRandomNumber($store.state._quotes.length - 1)"><i class="fas fa-sync"></i>Show new brutal quote</button>
+        <button class="new-quote" @click="getRandomNumber($store.state._quotes.length)"><i class="fas fa-sync"></i>Show new brutal quote</button>
     </div>
 </template>
 <script>
